@@ -12,7 +12,7 @@ function throwError(ctx : Context, code : number, message : string) {
     ctx.response.body = { error: message };
 }
 
-export function createRouter(cfg : Config) {
+export function createRouter(cfg : Config) : Router {
     const router = new Router();
 
     for(const action of registry.values()) {
@@ -41,6 +41,8 @@ export function createRouter(cfg : Config) {
             }
         })
     }
+
+    return router;
 }
 
 

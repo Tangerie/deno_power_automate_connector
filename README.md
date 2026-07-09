@@ -75,8 +75,10 @@ APP_VERSION=1.0.0
 ```
 
 ```bash
+deno add --jsr @tangerie/power-automate-connector
+
 # Create connector/apiDefinition.swagger.json from actions imported in actions/mod.ts
-deno -A jsr:@tangerie/power-automate-connector/swagger ./actions/mod.ts --outDir ./connector
+deno -A @tangerie/power-automate-connector/swagger ./actions/mod.ts --outDir ./connector
 
 # Create in Power Automate
 paconn create --api-def connector/apiDefinition.swagger.json --api-prop connector/apiProperties.json
